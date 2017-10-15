@@ -1,0 +1,4 @@
+{
+  "http.port": 0,
+  "remote.logger": "com.progressoft.brix.domino.remote.logging.DeobfuscatorRemoteLogger"
+}

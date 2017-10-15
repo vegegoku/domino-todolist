@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.progressoft.brix.domino.sample</groupId>
+        <artifactId>todolist</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>todolist-frontend</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>gwt-app</packaging>
+
+    <properties>
+        <compilation.directory>${project.build.directory}/${project.build.finalName}/webroot</compilation.directory>
+        <code.server.workdir>${project.build.directory}/${project.build.finalName}/codeserver</code.server.workdir>
+        <extra.directory>${project.build.directory}/${project.build.finalName}/webroot</extra.directory>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-user</artifactId>
+            <version>${gwt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-dev</artifactId>
+            <version>${gwt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.progressoft.brix.domino.api</groupId>
+            <artifactId>domino-api-shared</artifactId>
+            <version>${domino.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.progressoft.brix.domino.api</groupId>
+            <artifactId>domino-api-shared</artifactId>
+            <version>${domino.version}</version>
+            <classifier>sources</classifier>
+        </dependency>
+        <dependency>
+            <groupId>com.progressoft.brix.domino.impl</groupId>
+            <artifactId>domino-gwt</artifactId>
+            <version>${domino.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.progressoft.brix.domino.impl</groupId>
+            <artifactId>domino-gwt</artifactId>
+            <version>${domino.version}</version>
+            <classifier>sources</classifier>
+        </dependency>
+        <dependency>
+            <groupId>com.progressoft.brix.domino.api</groupId>
+            <artifactId>domino-api-client</artifactId>
+            <version>${domino.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.progressoft.brix.domino.api</groupId>
+            <artifactId>domino-api-client</artifactId>
+            <version>${domino.version}</version>
+            <classifier>sources</classifier>
+        </dependency>
+
+        <dependency>
+            <groupId>com.progressoft.brix.domino.sample</groupId>
+            <artifactId>todolist-layout-frontend</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.progressoft.brix.domino.sample</groupId>
+            <artifactId>todolist-layout-frontend</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <classifier>sources</classifier>
+        </dependency>
+
+       <!-- <dependency>
+            <groupId>com.progressoft.brix.domino.sample</groupId>
+            <artifactId>todolist-layout-frontend-ui-material</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.progressoft.brix.domino.sample</groupId>
+            <artifactId>todolist-layout-frontend-ui-material</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <classifier>sources</classifier>
+        </dependency>-->
+
+        <dependency>
+            <groupId>com.progressoft.brix.domino.sample</groupId>
+            <artifactId>todolist-layout-frontend-ui-elemento</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.progressoft.brix.domino.sample</groupId>
+            <artifactId>todolist-layout-frontend-ui-elemento</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <classifier>sources</classifier>
+        </dependency>
+
+        <dependency>
+            <groupId>com.progressoft.brix.domino.sample</groupId>
+            <artifactId>todolist-layout-shared</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.progressoft.brix.domino.sample</groupId>
+            <artifactId>todolist-layout-shared</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <classifier>sources</classifier>
+        </dependency>
+
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>net.ltgt.gwt.maven</groupId>
+                <artifactId>gwt-maven-plugin</artifactId>
+                <version>${gwt.plugin.version}</version>
+                <configuration>
+                    <moduleName>com.progressoft.brix.domino.sample.AppClientModule</moduleName>
+                    <moduleShortName>app</moduleShortName>
+                    <webappDirectory>${compilation.directory}</webappDirectory>
+                    <codeserverWorkDir>${code.server.workdir}</codeserverWorkDir>
+                    <extra>${extra.directory}/app/gwt/extra</extra>
+                    <compilerArgs>
+                        <arg>-saveSource</arg>
+                        <!--<arge>-style</arge>
+                        <arg>PRETTY</arg>-->
+                    </compilerArgs>
+                    <systemProperties>
+                        <gwt.persistentunitcachedir>${project.build.directory}/cacheDir</gwt.persistentunitcachedir>
+                    </systemProperties>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
