@@ -7,6 +7,8 @@
 # gwt caches and compiled units #
 war/gwt_bree/
 gwt-unitCache/
+war/**
+**/war/**
 
 # boilerplate generated classes #
 .apt_generated/
@@ -17,6 +19,7 @@ war/WEB-INF/classes/
 
 #compilation logs
 .gwt/
+
 
 #caching for already compiled files
 gwt-unitCache/
