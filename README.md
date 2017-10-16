@@ -27,7 +27,7 @@ Todo-list using Domino implementing UI with three different ways:
     - execute `mvn exec:java -Dmode=compiled`
     - the server port will be printed in the logs access the application on `http://localhost:[port]`
 
-> Note : The UI you see in the browser depends on what command you used to build application.
+> Note : The UI you see in the browser depends on what command you used to build the application.
 
 - Running the desktop version
   - in a terminal `cd todolist-desktop-frontend`
