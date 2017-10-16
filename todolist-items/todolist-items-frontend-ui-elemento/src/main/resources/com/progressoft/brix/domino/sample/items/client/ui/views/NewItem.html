@@ -1,0 +1,17 @@
+<div>
+    <paper-dialog data-element="addItemDialog"
+                  entry-animation="fade-in-animation"
+                  class="dialog" modal="">
+        <h2>Add Item</h2>
+        <paper-input data-element="titleInput" label="Title" required=""
+                     auto-validate="" error-message="required input!"></paper-input>
+        <div class="textarea-container iron-autogrow-textarea">
+            <paper-textarea data-element="descriptionInput" label="Notes"></paper-textarea>
+        </div>
+        <div class="buttons">
+            <paper-button dialog-dismiss="">Cancel</paper-button>
+            <paper-button data-element="confirmAddButton"
+                          dialog-confirm="">OK</paper-button>
+        </div>
+    </paper-dialog>
+</div>

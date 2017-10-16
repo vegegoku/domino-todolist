@@ -18,14 +18,11 @@ public abstract class Layout implements IsElement<HTMLElement>{
     @DataElement
     PaperFabElement addButton;
 
-//    @DataElement
-//    HTMLDivElement menuContainer;
+    @DataElement
+    HTMLDivElement menuContainer;
 
     @DataElement
     HTMLDivElement content;
-
-    @DataElement
-    PaperIconButtonElement menu;
 
     public static Layout create(){
         return new Templated_Layout();

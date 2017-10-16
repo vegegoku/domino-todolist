@@ -84,9 +84,10 @@
 
     <modules>
         <module>todolist-layout-frontend</module>
-        <module>todolist-layout-frontend-ui-material</module>
-        <module>todolist-layout-frontend-ui-elemento</module>
         <module>todolist-layout-shared</module>
         <module>todolist-layout-backend</module>
+        <module>todolist-layout-frontend-ui-material</module>
+        <module>todolist-layout-frontend-ui-elemento</module>
+        <module>todolist-layout-frontend-ui-javafx</module>
     </modules>
 </project>
