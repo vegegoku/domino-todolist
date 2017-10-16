@@ -77,62 +77,6 @@
             <classifier>sources</classifier>
         </dependency>
 
-        <!--     Material UI      -->
-        <!--<dependency>
-            <groupId>com.progressoft.brix.domino.sample</groupId>
-            <artifactId>todolist-layout-frontend-ui-material</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.progressoft.brix.domino.sample</groupId>
-            <artifactId>todolist-layout-frontend-ui-material</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <classifier>sources</classifier>
-        </dependency>
-
-        <dependency>
-            <groupId>com.progressoft.brix.domino.sample</groupId>
-            <artifactId>todolist-items-frontend-ui-material</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.progressoft.brix.domino.sample</groupId>
-            <artifactId>todolist-items-frontend-ui-material</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <classifier>sources</classifier>
-        </dependency>-->
-        <!--********************************************-->
-
-
-        <!--     Polymer UI      -->
-        <dependency>
-            <groupId>com.progressoft.brix.domino.sample</groupId>
-            <artifactId>todolist-layout-frontend-ui-elemento</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.progressoft.brix.domino.sample</groupId>
-            <artifactId>todolist-layout-frontend-ui-elemento</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <classifier>sources</classifier>
-        </dependency>
-
-        <dependency>
-            <groupId>com.progressoft.brix.domino.sample</groupId>
-            <artifactId>todolist-items-frontend-ui-elemento</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.progressoft.brix.domino.sample</groupId>
-            <artifactId>todolist-items-frontend-ui-elemento</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <classifier>sources</classifier>
-        </dependency>
-
-        <!--********************************************-->
-
-
-
         <dependency>
             <groupId>com.progressoft.brix.domino.sample</groupId>
             <artifactId>todolist-layout-shared</artifactId>
@@ -168,7 +112,6 @@
             <version>1.0-SNAPSHOT</version>
             <classifier>sources</classifier>
         </dependency>
-
 
 
     </dependencies>
@@ -204,4 +147,74 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <!-- XXX: We want to exclude stock-client from 'env-dev' profile, Maven forces us to make a 'env-prod' profile -->
+            <id>ui-polymer</id>
+            <activation>
+                <property>
+                    <name>ui</name>
+                    <value>polymer</value>
+                </property>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>com.progressoft.brix.domino.sample</groupId>
+                    <artifactId>todolist-layout-frontend-ui-elemento</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.progressoft.brix.domino.sample</groupId>
+                    <artifactId>todolist-layout-frontend-ui-elemento</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                    <classifier>sources</classifier>
+                </dependency>
+
+                <dependency>
+                    <groupId>com.progressoft.brix.domino.sample</groupId>
+                    <artifactId>todolist-items-frontend-ui-elemento</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.progressoft.brix.domino.sample</groupId>
+                    <artifactId>todolist-items-frontend-ui-elemento</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                    <classifier>sources</classifier>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <!-- XXX: We want to exclude stock-client from 'env-dev' profile, Maven forces us to make a 'env-prod' profile -->
+            <id>ui-material</id>
+            <activation>
+            <activeByDefault>true</activeByDefault>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>com.progressoft.brix.domino.sample</groupId>
+                    <artifactId>todolist-layout-frontend-ui-material</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.progressoft.brix.domino.sample</groupId>
+                    <artifactId>todolist-layout-frontend-ui-material</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                    <classifier>sources</classifier>
+                </dependency>
+
+                <dependency>
+                    <groupId>com.progressoft.brix.domino.sample</groupId>
+                    <artifactId>todolist-items-frontend-ui-material</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.progressoft.brix.domino.sample</groupId>
+                    <artifactId>todolist-items-frontend-ui-material</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                    <classifier>sources</classifier>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
 </project>
